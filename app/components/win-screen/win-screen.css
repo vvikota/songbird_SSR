@@ -1,4 +1,4 @@
-.winScreen {
+.winScreenWrapper {
   margin-top: 25px;
   padding: 15px 32px 80px 32px;
   background-color: #303030;
@@ -7,20 +7,20 @@
   border-radius: 3px;
 }
 
-.winScreen h1 {
+.winScreenWrapper h1 {
   margin-bottom: 20px;
   font-size: 70px;
   font-weight: 300;
 }
 
-.win-screen p {
+.winScreenWrapper p {
   margin: 0;
   padding-bottom: 30px;
   font-size: 22px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.win-screen button {
+.winScreenWrapper button {
   width: 100%;
   margin-top: 30px;
   padding: 20px;
@@ -32,39 +32,39 @@
   cursor: pointer;
 }
 
-.win-screen button:hover {
+.winScreenWrapper button:hover {
   background-color: #00efb2;
 }
 
-.win-screen button:focus{
+.winScreenWrapper button:focus{
   outline: none;
 }
 
-.win-image{
+.winImage{
   width: 80%;
   margin-top: 20px;
 }
 
 @media(max-width: 620px){
-  .win-screen {
+  .winScreenWrapper {
     padding: 15px 20px 50px 20px;
   }
 
-  .win-screen h1{
+  .winScreenWrapper h1{
     font-size: 30px;
     margin-bottom: 5px;
   }
  
-  .win-screen span {
+  .winScreenWrapper span {
     font-size: 20px;
   }
 
-  .win-screen p {
+  .winScreenWrapper p {
     font-size: 14px;
     margin-top: 20px;
   }
 
-  .win-image{
+  .winImage{
     width: 100%;
   }
 }
