@@ -12,8 +12,8 @@ import {
 
 // import {CategoryQuestions} from "../../types";
 
-const correctSound = 'https://vvikota-songbird.netlify.app/static/js/assets/sound/correct.mp3';
-const wrongSound = 'https://vvikota-songbird.netlify.app/static/js/assets/sound/wrong.mp3';
+const correctSound = 'https://vvikota-songbird.netlify.app/static/media/correct.c59c1ab1.mp3';
+const wrongSound = 'https://vvikota-songbird.netlify.app/static/media/wrong.b1392219.mp3';
 
 // interface Props {
 //   answerVariants: string[];
