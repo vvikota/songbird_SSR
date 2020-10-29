@@ -1,18 +1,16 @@
 import * as React from "react";
 import styles from './main-screen.css';
-
 import CurrentQuestion from "../current-question/current-question";
-// import Answers from "../answers/answers";
+import Answers from "../answers/answers";
 // import BirdDescription from "../bird-description/bird-description";
+import {ActionCreator} from "../../../redux/reducer";
+import {connect} from "react-redux";
 import {
   getQuestions,
   getCurrenCategory,
   getIsCorrectAnswer,
   getCategories
 } from "../../../redux/selectors";
-
-import {ActionCreator} from "../../../redux/reducer";
-import {connect} from "react-redux";
 // import {DataCategory} from "../../types";
 
 // interface Props {
@@ -75,19 +73,18 @@ class MainScreen extends React.PureComponent{
           isPlaying = {isPlaying}
           onPlayButtonClick = {() => this.setState({isPlaying: !isPlaying, isPlayingVariantAnswer: false})}
         />
-        {/* <section className="answer-section">
+        <section className={styles.answerSection}>
           <Answers 
             onCorrectAnswerClick={() => this.setState({isPlaying: false})}
           />
-          <BirdDescription 
+          {/* <BirdDescription 
             isPlaying = {isPlayingVariantAnswer}
             onPlayButtonClick = {() =>
               this.setState({isPlayingVariantAnswer: !isPlayingVariantAnswer, isPlaying: false})}
-          />
-        </section> */}
+          /> */}
+        </section>
         <button
-          // className={`next-level-button${isCorrectAnswer ? ' next-level-button--active' : ''}`}
-          className={isCorrectAnswer ? `${styles.nextLevelButton} ${styles.nextLevelButton}` : styles.nextLevelButton}
+          className={isCorrectAnswer ? `${styles.nextLevelButton} ${styles.nextLevelButtonActive}` : styles.nextLevelButton}
           onClick={onButtonclick}
         >  
         {islastCorrectAnswer ? `Закончить игру` : `Следующий вопрос`}
