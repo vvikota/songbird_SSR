@@ -6,7 +6,6 @@ import createStore from '../redux/store';
 import { Provider } from 'react-redux';
 // import { StaticRouter } from 'react-router-dom';
 
-
 export default function render(req, res) {
   const store = createStore();
 
