@@ -5,7 +5,7 @@
   margin-bottom: 10px;
 }
 
-.top-header img{
+.topHeader img{
   width: 135px;
 }
 
@@ -35,32 +35,32 @@
 }
 
 @media(max-width: 980px){
-  .category-questions {
+  .categoryQuestions {
     flex-wrap: wrap;
   }
 
-  .category-questions__item {
+  .categoryQuestions__item {
     width: calc(100% / 3);
   }
 }
 
 @media(max-width: 580px){
-  .category-questions__item {
+  .categoryQuestions__item {
     width: calc(100% / 2);
   }
 }
 
 
 @media(max-width: 420px){
-  .category-questions__item {
+  .categoryQuestionsItem {
     width: 100%;
   }
 
-  .top-header {
+  .topHeader {
     flex-direction: column;
   }
   
-  .point-counter{
+  .pointCounter{
     margin-top: 15px;
   }
 }

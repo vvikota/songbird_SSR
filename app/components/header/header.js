@@ -1,11 +1,9 @@
 import * as React from "react";
 import styles from './header.css';
 import {connect} from "react-redux";
-import {getCategories} from "../../../redux/selectors";
-import {getCurrenCategory} from "../../../redux/selectors";
-import {getScore} from "../../../redux/selectors";
+import {getCategories, getCurrenCategory, getScore} from "../../../redux/selectors";
 
-// import logo from '../../assets/images/logo.png';
+const logoURL = "https://vvikota-songbird.netlify.app/static/media/logo.da8f049a.png";
 
 // interface HeaderProps {
 //   categories: string[]
@@ -23,7 +21,7 @@ const Header = (props) => {
   return (
     <header>
       <div className={styles.topHeader}>
-        {/* <img src={logo} alt="logo"/> */}
+        <img src={logoURL} alt="logo"/>
         <span className={styles.pointCounter}>Score: {score}</span>
       </div>
 

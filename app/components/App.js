@@ -17,7 +17,7 @@ export default class App extends React.PureComponent {
     const {isGameOver} = this.state;
 
     return (
-      <div className={styles.wrapper}>
+      <div className={styles.container}>
         <Header />
 
         {isGameOver ? (
