@@ -2,7 +2,7 @@ import * as React from "react";
 import styles from './main-screen.css';
 import CurrentQuestion from "../current-question/current-question";
 import Answers from "../answers/answers";
-// import BirdDescription from "../bird-description/bird-description";
+import BirdDescription from "../bird-description/bird-description";
 import {ActionCreator} from "../../../redux/reducer";
 import {connect} from "react-redux";
 import {
@@ -77,11 +77,11 @@ class MainScreen extends React.PureComponent{
           <Answers 
             onCorrectAnswerClick={() => this.setState({isPlaying: false})}
           />
-          {/* <BirdDescription 
+          <BirdDescription 
             isPlaying = {isPlayingVariantAnswer}
             onPlayButtonClick = {() =>
               this.setState({isPlayingVariantAnswer: !isPlayingVariantAnswer, isPlaying: false})}
-          /> */}
+          />
         </section>
         <button
           className={isCorrectAnswer ? `${styles.nextLevelButton} ${styles.nextLevelButtonActive}` : styles.nextLevelButton}
