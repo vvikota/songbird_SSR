@@ -1,7 +1,7 @@
 import * as React from "react";
 import styles from './main-screen.css';
 
-// import CurrentQuestion from "../current-question/current-question";
+import CurrentQuestion from "../current-question/current-question";
 // import Answers from "../answers/answers";
 // import BirdDescription from "../bird-description/bird-description";
 import {
@@ -71,10 +71,10 @@ class MainScreen extends React.PureComponent{
    
     return (
       <div>
-        {/* <CurrentQuestion 
+        <CurrentQuestion 
           isPlaying = {isPlaying}
           onPlayButtonClick = {() => this.setState({isPlaying: !isPlaying, isPlayingVariantAnswer: false})}
-        /> */}
+        />
         {/* <section className="answer-section">
           <Answers 
             onCorrectAnswerClick={() => this.setState({isPlaying: false})}

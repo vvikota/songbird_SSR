@@ -1,0 +1,43 @@
+.currentQuestion{
+  display: flex;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #303030;
+}
+
+.currentQuestionImg{
+  width: 200px;
+  height: 180px;
+  object-fit: cover;
+  margin-right: 50px;
+  border-radius: 20px;
+}
+
+.currentQuestionPlayerBlock{
+  width: 100%;
+}
+
+.currentQuestionPlayerTitleWrapper{
+  border-bottom: 1px solid #444444;
+}
+
+.currentQuestionPlayerTitle{
+  color: #ffffff;
+}
+
+.currentQuestionPlayer{
+  padding-top: 30px;
+}
+
+@media(max-width: 780px){
+  .currentQuestion{
+    flex-direction: column;
+  }
+
+  .currentQuestionImg{
+    margin-right: 0;
+    width: 220px;
+  }
+}
