@@ -4,7 +4,7 @@ import {connect} from "react-redux";
 import {ActionCreator} from "../../../redux/reducer";
 import {getCategories, getScoreShowStatus, getshowSaveResult, getScore} from "../../../redux/selectors";
 import Score from "../score/score";
-// import SaveResult from "../save-result/save-result";
+import SaveResult from "../save-result/save-result";
 // import {stateInterface} from "../../types";
 
 // const winImgURL = "https://vvikota-songbird.netlify.app/static/media/winner.20431031.jpg";
