@@ -1,8 +1,8 @@
 {
-  "name": "react-ssr-tut",
+  "name": "songbird_ssr",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/hyperh/react-ssr-tut.git",
+  "repository": "https://github.com/vvikota/songbird_SSR.git",
   "license": "MIT",
   "scripts": {
     "build:dev": "webpack --config ./webpack/webpack.config.dev-ssr.js",
