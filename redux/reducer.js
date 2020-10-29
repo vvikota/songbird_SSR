@@ -9,7 +9,7 @@ const initialState = {
   isStartLevel: true,
   questions: [],
   score: 0,
-  showSaveResult: true,
+  showSaveResult: false,
   showScore: false,
 }
 

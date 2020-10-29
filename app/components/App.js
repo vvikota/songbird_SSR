@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from './App.css'
 import Header from './header/header';
-import MainScreen from './mainScreen/mainScreen';
+import MainScreen from './main-screen/main-screen';
 import WinScreen from './win-screen/win-screen';
 
 export default class App extends React.PureComponent {
@@ -9,7 +9,7 @@ export default class App extends React.PureComponent {
     super();
 
     this.state = {
-      isGameOver: true,
+      isGameOver: false,
     };
   }
 

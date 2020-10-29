@@ -1,12 +1,12 @@
 
-.answer-section{
+.answerSection{
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
 }
 
-.next-level-button{
+.nextLevelButton{
   width: 100%;
   margin-top: 25px;
   padding-top: 7px;
@@ -18,22 +18,22 @@
   font-size: 16px;
 }
 
-.next-level-button:focus{
+.nextLevelButton:focus{
   outline: none;
 }
 
-.next-level-button--active{
+.nextLevelButtonActive{
   background-color: #00bc8c;
   border: 1px solid #00bc8c;
   cursor: pointer;
 }
 
-.next-level-button--active:hover{
+.nextLevelButtonActive:hover{
   background-color: #00efb2;
 }
 
 @media(max-width: 780px){
-  .answer-section{
+  .answerSection{
     flex-direction: column;
   }
 }
