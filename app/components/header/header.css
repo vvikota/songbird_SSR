@@ -21,7 +21,7 @@
   color: #ffffff;
 }
 
-.category-questions__item{
+.categoryQuestionsItem{
   width: calc(100% / 6);
   padding-top: 5px;
   padding-bottom: 5px;
@@ -30,7 +30,7 @@
   text-align: center;
 }
 
-.category-questions__item--active{
+.categoryQuestionsItemActive{
   background-color: #00bc8c;
 }
 
