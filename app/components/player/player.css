@@ -1,0 +1,155 @@
+.playerComponentWrapper {
+  display: flex;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.trackButton {
+  width: 35px;
+  height: 35px;
+  border: 2px solid #00bc8c;
+  border-radius: 30px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.trackButton svg {
+  width: 20px;
+  padding-top: 9px;
+  padding-left: 7px;
+}
+
+.trackButtonPause svg {
+  padding-top: 7px;
+}
+
+.trackStatusBlock{
+  flex: 1 0 auto;
+  margin-left: 30px;
+  padding-top: 18px;
+}
+
+.trackStatus{
+  display: block;
+  position: relative;
+  height: 3px;
+  background-color: #555555;
+  align-self: center;
+}
+
+.trackStatusProgress{
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  background-color: rgba(67, 138, 85, 0.5)
+}
+
+.trackStatusMarker{
+  position: absolute;
+  content: "";
+  width: 15px;
+  height: 15px;
+  top: -6px;
+  left: 0;
+  background-color: #555555;
+  border-radius: 20px;
+}
+
+.volumeStatusMarker {
+  position: absolute;
+  content: "";
+  width: 5px;
+  height: 15px;
+  top: -6px;
+  left: 0;
+  background-color: #555555;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.timeIndicators{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 7px;
+}
+
+.timeIndicatorsStart,
+.timeIndicatorsFinish{
+  font-size: 12px;
+  color: #ffffff;
+}
+
+.volumeBlock{
+  margin-right: 0;
+  margin-left: auto;
+  width: 120px;
+}
+
+.volumeStatus{
+  margin-top: -7px;
+}
+
+.rangeType {
+  -webkit-appearance: none;
+  margin: 18px 0;
+  width: 100%;
+}
+.rangeType:focus {
+  outline: none;
+}
+.rangeType::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: #555555;
+}
+.rangeType::-webkit-slider-thumb {
+  height: 15px;
+  width: 5px;
+  border-radius: 3px;
+  background: #555555;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -7px;
+}
+.rangeType:focus::-webkit-slider-runnable-track {
+  background: #008966;
+}
+
+.rangeType::-moz-range-track {
+ width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: #555555;
+}
+.rangeType::-moz-range-thumb {
+  height: 15px;
+  width: 5px;
+  border-radius: 3px;
+  background: #555555;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -7px;
+}
+.rangeType::-ms-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: #555555;
+}
+
+.rangeType::-ms-thumb {
+  height: 15px;
+  width: 5px;
+  border-radius: 3px;
+  background: #555555;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -7px;
+}
+
+@media(max-width: 520px){
+  .volumeBlock{
+    width: 100px;
+  }
+}

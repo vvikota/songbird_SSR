@@ -1,6 +1,6 @@
 import * as React from "react";
 import styles from "./current-question.css";
-// import AudioPlayer from "../player/player";
+import AudioPlayer from "../player/player";
 import {connect} from "react-redux";
 import {
   getCorrectAnswer,
@@ -43,7 +43,7 @@ const CurrentQuestion = (props) => {
         </div>
         
         <div className={styles.currentQuestionPlayer}>
-          {/* { src ? (
+          { src ? (
             <AudioPlayer 
               isPlaying = {isPlaying}
               onPlayButtonClick = {onPlayButtonClick}
@@ -51,7 +51,7 @@ const CurrentQuestion = (props) => {
             />
           ) : (
             <p>Loading...</p>
-          )} */}
+          )}
         </div>
       </div>
     </section>
