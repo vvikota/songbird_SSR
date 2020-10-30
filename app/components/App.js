@@ -21,9 +21,9 @@ export default class App extends React.PureComponent {
         <Header />
 
         {isGameOver ? (
-          <WinScreen />
+          <WinScreen onNextGameClick={() => this.setState({isGameOver: false})}/>
         ) : (
-          <MainScreen />
+          <MainScreen onGameOverClick={() => this.setState({isGameOver: true})}/>
         )}
       </div>
   

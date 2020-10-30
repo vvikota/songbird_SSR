@@ -7,7 +7,7 @@ import Score from "../score/score";
 import SaveResult from "../save-result/save-result";
 // import {stateInterface} from "../../types";
 
-// const winImgURL = "https://vvikota-songbird.netlify.app/static/media/winner.20431031.jpg";
+const winImgURL = "https://vvikota-songbird.netlify.app/static/media/winner.20431031.jpg";
 
 // interface WinScreenProps { 
 //   score: number
