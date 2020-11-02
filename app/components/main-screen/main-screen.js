@@ -10,7 +10,7 @@ import {
   getCurrenCategory,
   getIsCorrectAnswer,
   getCategories
-} from "../../../redux/selectors";
+} from "../../../redux/selectors.tsx";
 // import {DataCategory} from "../../types";
 
 // interface Props {

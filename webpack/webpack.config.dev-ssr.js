@@ -13,13 +13,18 @@ module.exports = {
     publicPath,
   },
   target: 'node',
-  externals: nodeExternals(),  
+  externals: [nodeExternals()],  
   module: {
     loaders: commonLoaders.concat([
       {
         test: /\.css$/,
         loader: 'css/locals?module&localIdentName=[name]__[local]___[hash:base64:5]'
-      }      
+      },
+      { 
+        test: /\.tsx?$/,
+        loader: 'ts-loader',
+        exclude: path.join(__dirname, '..', 'node_modules'),
+      } 
     ]),
   },
 };

@@ -1,7 +1,7 @@
 import * as React from "react";
-import styles from './header.css';
+import styles from './header';
 import {connect} from "react-redux";
-import {getCategories, getCurrenCategory, getScore} from "../../../redux/selectors";
+import {getCategories, getCurrenCategory, getScore} from "../../../redux/selectors.tsx";
 
 const logoURL = "https://vvikota-songbird.netlify.app/static/media/logo.da8f049a.png";
 
@@ -19,26 +19,30 @@ const Header = (props) => {
   } = props;
 
   return (
-    <header>
-      <div className={styles.topHeader}>
-        <img src={logoURL} alt="logo"/>
-        <span className={styles.pointCounter}>Score: {score}</span>
-      </div>
+    // <header>
+    //   <div className={styles.topHeader}>
+    //     <img src={logoURL} alt="logo"/>
+    //     <span className={styles.pointCounter}>Score: {score}</span>
+    //   </div>
 
-      <div className={styles.categoryQuestions}>
-        {categories.map((category, id) => (
-          <span 
-            className={currenCategory === id ? `${styles.categoryQuestionsItemActive} ${styles.categoryQuestionsItem}` : styles.categoryQuestionsItem}
-            key={id}>
-            {category}
-          </span>
-        ))}
-      </div>
-    </header>
+    //   <div className={styles.categoryQuestions}>
+    //     {categories.map((category, id) => (
+    //       <span 
+    //         className={
+    //           currenCategory === id ?
+    //            `${styles.categoryQuestionsItemActive} ${styles.categoryQuestionsItem}` :
+    //             styles.categoryQuestionsItem}
+    //         key={id}>
+    //         {category}
+    //       </span>
+    //     ))}
+    //   </div>
+    // </header>
+    <div>Htaeder</div>
   )
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: any) => ({
   categories: getCategories(state),
   currenCategory: getCurrenCategory(state),
   score: getScore(state),

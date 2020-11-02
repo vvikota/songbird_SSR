@@ -2,8 +2,8 @@ import * as React from "react";
 import styles from './win-screen.css';
 import {connect} from "react-redux";
 import {ActionCreator} from "../../../redux/reducer";
-import {getCategories, getScoreShowStatus, getshowSaveResult, getScore} from "../../../redux/selectors";
-import Score from "../score/score";
+import {getCategories, getScoreShowStatus, getshowSaveResult, getScore} from "../../../redux/selectors.tsx";
+import Score from "../score/score.jsx";
 import SaveResult from "../save-result/save-result";
 // import {stateInterface} from "../../types";
 

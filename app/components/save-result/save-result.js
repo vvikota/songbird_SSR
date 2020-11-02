@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from './save-result.css';
 
-import {getScore, getGameScore} from "../../../redux/selectors";
+import {getScore, getGameScore} from "../../../redux/selectors.tsx";
 // import {stateInterface} from "../../types";
 import {connect} from "react-redux";
 import {ActionCreator} from "../../../redux/reducer";

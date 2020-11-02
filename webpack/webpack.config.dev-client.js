@@ -20,7 +20,12 @@ module.exports = {
           'style',
           'css?module&localIdentName=[name]__[local]___[hash:base64:5]',
         ],
-      }
+      },
+      { 
+        test: /\.tsx?$/,
+        loader: 'ts-loader',
+        exclude: path.join(__dirname, '..', 'node_modules'),
+      } 
     ])
   },
 };

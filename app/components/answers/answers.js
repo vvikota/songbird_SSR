@@ -8,7 +8,7 @@ import {
   getCorrectAnswer,
   getIsCorrectAnswer,
   getIsStartLevel
-} from "../../../redux/selectors";
+} from "../../../redux/selectors.tsx";
 
 // import {CategoryQuestions} from "../../types";
 

@@ -5,10 +5,10 @@ module.exports = {
   assetsPath: path.join(__dirname, '..', 'dist', 'assets'),
   commonLoaders: [
     {
-      test: /\.js$/,
+      test: /\.(js|jsx)$/,
       loader: 'babel',
       // include: path.join(__dirname, '..', 'app'),
       exclude: path.join(__dirname, '..', 'node_modules'),
-    },
+    }
   ],
 };

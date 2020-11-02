@@ -2,7 +2,7 @@ import * as React from "react";
 import styles from "./bird-description.css";
 import AudioPlayer from "../player/player";
 import {connect} from "react-redux";
-import {getActiveAnswerData, getIsStartLevel} from "../../../redux/selectors";
+import {getActiveAnswerData, getIsStartLevel} from "../../../redux/selectors.tsx";
 
 // import {CategoryQuestions} from "../../types";
 
