@@ -6,7 +6,7 @@ import {
   getCorrectAnswer,
   getIsCorrectAnswer,
   getIsStartLevel
-} from "../../../redux/selectors.tsx";
+} from "../../../redux/selectors.js";
 // import {CategoryQuestions} from "../../types";
 
 const defaultImg = 'https://vvikota-songbird.netlify.app/static/media/default.7ccb15c9.jpg';

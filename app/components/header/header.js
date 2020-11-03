@@ -1,7 +1,7 @@
 import * as React from "react";
 import styles from './header.css';
 import {connect} from "react-redux";
-import {getCategories, getCurrenCategory, getScore} from "../../../redux/selectors.tsx";
+import {getCategories, getCurrenCategory, getScore} from "../../../redux/selectors";
 
 const logoURL = "https://vvikota-songbird.netlify.app/static/media/logo.da8f049a.png";
 

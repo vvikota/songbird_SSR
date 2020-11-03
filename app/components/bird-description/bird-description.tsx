@@ -4,7 +4,7 @@ import {CategoryQuestions, stateInterface} from "../../../types";
 // @ts-ignore
 import AudioPlayer from "../player/player.tsx";
 // @ts-ignore
-import {getActiveAnswerData, getIsStartLevel} from "../../../redux/selectors.tsx";
+import {getActiveAnswerData, getIsStartLevel} from "../../../redux/selectors.js";
 
 const styles = require('./bird-description.css');
 

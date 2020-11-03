@@ -1,19 +1,18 @@
 import {createSelector} from "reselect";
-import {DataCategory} from "../types";
 
-export const getQuestions = (state: { questions: DataCategory[]; }) => {
+export const getQuestions = (state) => {
   return state.questions;
 };
 
-export const getGameScore =  (state: { gameScore: [] }) => {
+export const getGameScore =  (state) => {
   return state.gameScore;
 }
 
-export const getScoreShowStatus = (state: { showScore: boolean }) => {
+export const getScoreShowStatus = (state) => {
   return state.showScore;
 }
 
-export const getshowSaveResult = (state: { showSaveResult: boolean }) => {
+export const getshowSaveResult = (state) => {
   return state.showSaveResult;
 }
 
@@ -22,7 +21,7 @@ export const getCategories = createSelector(
   (questions) => questions.map(question => question.category)
 )
 
-export const getCurrenCategory = (state: { currenCategory: number; }) => {
+export const getCurrenCategory = (state) => {
   return state.currenCategory || 0;
 };
 
@@ -40,7 +39,7 @@ export const getCurrentAnswerVariants = createSelector(
 )
 
 
-export const getActiveAnswer = (state: { activeAnswer: string; }) => {
+export const getActiveAnswer = (state) => {
   return state.activeAnswer;
 };
 
@@ -53,19 +52,19 @@ export const getActiveAnswerData = createSelector(
   }
 )
 
-export const getScore = (state: { score: number; }) => {
+export const getScore = (state) => {
   return state.score;
 };
 
-export const getIsCorrectAnswer = (state: { isCorrectAnswer: boolean; }) => {
+export const getIsCorrectAnswer = (state) => {
   return state.isCorrectAnswer;
 };
 
-export const getIsStartLevel = (state: { isStartLevel: boolean; }) => {
+export const getIsStartLevel = (state) => {
   return state.isStartLevel;
 };
 
 
-export const getCorrectAnswer = (state: { correctAnswer: number; }) => {
+export const getCorrectAnswer = (state) => {
   return state.correctAnswer;
 };
