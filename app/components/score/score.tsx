@@ -1,12 +1,9 @@
 import * as React from 'react';
 import {connect} from "react-redux";
 import {scoreRowInterface, stateInterface} from "../../../types";
-// @ts-ignore
 import {getGameScore} from "../../../redux/selectors.js";
-// @ts-ignore
 import {ActionCreator} from "../../../redux/reducer.js";
-
-const styles = require('./score.css');
+import * as styles from './score.css';
 
 interface scoreProps {
   gameScore: scoreRowInterface[]

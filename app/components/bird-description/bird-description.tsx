@@ -1,12 +1,9 @@
 import * as React from "react";
 import {connect} from "react-redux";
 import {CategoryQuestions, stateInterface} from "../../../types";
-// @ts-ignore
 import AudioPlayer from "../player/player.tsx";
-// @ts-ignore
 import {getActiveAnswerData, getIsStartLevel} from "../../../redux/selectors.js";
-
-const styles = require('./bird-description.css');
+import * as styles from './bird-description.css';
 
 interface BirdDescriptionProps {
   isStartLevel: boolean;

@@ -1,16 +1,12 @@
 import * as React from "react";
 import {connect} from "react-redux";
 import {stateInterface} from "../../../types";
-// @ts-ignore
 import {ActionCreator} from "../../../redux/reducer.js";
-// @ts-ignore
 import {getCategories, getScoreShowStatus, getshowSaveResult, getScore} from "../../../redux/selectors.js";
-// @ts-ignore
 import Score from "../score/score.tsx";
-// @ts-ignore
 import SaveResult from "../save-result/save-result.tsx";
+import * as styles from './win-screen.css';
 
-const styles = require('./win-screen.css');
 const winImgURL = "https://vvikota-songbird.netlify.app/static/media/winner.20431031.jpg";
 
 interface WinScreenProps { 

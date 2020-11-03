@@ -1,9 +1,7 @@
 import * as React from 'react';
 import {createRef} from 'react';
-// @ts-ignore
 import {PlayIcon, PauseIcon} from '../icons.js';
-
-const styles = require('./player.css');
+import * as styles from './player.css';
 
 interface Props {
   src: string;

@@ -1,12 +1,10 @@
 import * as React from "react";
 import {connect} from "react-redux";
 import {CategoryQuestions, stateInterface} from "../../../types";
-// @ts-ignore
 import AudioPlayer from "../player/player.tsx";
-// @ts-ignore
 import { getCorrectAnswer, getIsCorrectAnswer, getIsStartLevel } from "../../../redux/selectors.js";
+import * as styles from "./current-question.css";
 
-const styles = require("./current-question.css");
 const defaultImg = 'https://vvikota-songbird.netlify.app/static/media/default.7ccb15c9.jpg';
 
 interface CurrentQuestionProps {

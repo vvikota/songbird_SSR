@@ -1,12 +1,8 @@
 import * as React from 'react';
-// @ts-ignore
 import Header from './header/header.tsx';
-// @ts-ignore
 import MainScreen from './main-screen/main-screen.tsx';
-// @ts-ignore
 import WinScreen from './win-screen/win-screen.tsx';
-
-const styles = require('./App.css');
+import * as styles from './App.css';
 
 interface Props {}
 interface State {

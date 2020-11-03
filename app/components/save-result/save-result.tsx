@@ -1,12 +1,9 @@
 import * as React from 'react';
 import {connect} from "react-redux";
 import {stateInterface} from "../../../types";
-// @ts-ignore
 import {getScore, getGameScore} from "../../../redux/selectors.js";
-// @ts-ignore
 import {ActionCreator} from "../../../redux/reducer.js";
-
-const styles = require('./save-result.css');
+import * as styles from './save-result.css';
 
 interface currentScoreRow {
   name: string

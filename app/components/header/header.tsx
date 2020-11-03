@@ -1,10 +1,9 @@
 import * as React from "react";
 import {connect} from "react-redux";
 import {stateInterface} from "../../../types";
-// @ts-ignore
 import {getCategories, getCurrenCategory, getScore} from "../../../redux/selectors.js";
+import * as styles from './header.css';
 
-const styles = require('./header.css')
 const logoURL = "https://vvikota-songbird.netlify.app/static/media/logo.da8f049a.png";
 
 interface HeaderProps {

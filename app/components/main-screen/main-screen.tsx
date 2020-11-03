@@ -1,18 +1,13 @@
 import * as React from "react";
 import {connect} from "react-redux";
 import {DataCategory, stateInterface} from "../../../types";
-// @ts-ignore
 import CurrentQuestion from "../current-question/current-question.tsx";
-// @ts-ignore
 import Answers from "../answers/answers.tsx";
-// @ts-ignore
 import BirdDescription from "../bird-description/bird-description.tsx";
-// @ts-ignore
 import {ActionCreator} from "../../../redux/reducer.js";
-// @ts-ignore
 import { getQuestions, getCurrenCategory, getIsCorrectAnswer, getCategories } from "../../../redux/selectors.js";
+import * as styles from './main-screen.css';
 
-const styles = require('./main-screen.css')
 interface Props {
   getFirstCorrectAnswer: (questions: DataCategory[], currentCategory: number) => void;
   currenCategory: number;

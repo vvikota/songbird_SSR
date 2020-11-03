@@ -2,12 +2,10 @@ import * as React from "react";
 import {createRef} from 'react';
 import {connect} from "react-redux";
 import {CategoryQuestions, stateInterface} from "../../../types";
-// @ts-ignore
 import {ActionCreator} from "../../../redux/reducer.js";
-// @ts-ignore
 import { getCurrentAnswerVariants, getCorrectAnswer, getIsCorrectAnswer, getIsStartLevel } from "../../../redux/selectors.js";
+import * as styles from "./answers.css";
 
-const styles = require("./answers.css");
 const correctSound = 'https://vvikota-songbird.netlify.app/static/media/correct.c59c1ab1.mp3';
 const wrongSound = 'https://vvikota-songbird.netlify.app/static/media/wrong.b1392219.mp3';
 
