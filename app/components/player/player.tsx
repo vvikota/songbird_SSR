@@ -1,21 +1,26 @@
 import * as React from 'react';
 import {createRef} from 'react';
-import styles from './player.css';
 import {PlayIcon, PauseIcon} from '../icons';
 
-// interface Props {
-//   src: string;
-//   onPlayButtonClick: () => void;
-//   isPlaying: boolean;
-// }
+const styles = require('./player.css');
 
-// interface State {
-//   duration: number;
-//   progress: number;
-// }
+interface Props {
+  src: string;
+  onPlayButtonClick: () => void;
+  isPlaying: boolean;
+}
 
-class AudioPlayer extends React.PureComponent {
-  constructor(props) {
+interface State {
+  duration: number;
+  progress: number;
+}
+
+class AudioPlayer extends React.PureComponent<Props, State> {
+  static playerComponentWrapper: string;
+  static trackButton: string;
+  static trackButtonPause: string;
+  static trackButtonPlay: string;
+  constructor(props: Readonly<Props>) {
     super(props);
     
     this.state = {
@@ -26,7 +31,7 @@ class AudioPlayer extends React.PureComponent {
     this._onPlayButtonClick = this._onPlayButtonClick.bind(this);
   }
 
-  _audioRef = createRef()
+  private _audioRef = createRef<HTMLAudioElement>()
   
   _onPlayButtonClick() {
     this.props.onPlayButtonClick();
@@ -50,7 +55,7 @@ class AudioPlayer extends React.PureComponent {
     }
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps: {src: string}) {
 
     const audio = this._audioRef.current;
 
@@ -94,9 +99,9 @@ class AudioPlayer extends React.PureComponent {
 
     let progressInPercent = (progress / duration) * 100;
    
-    const transformTime = (time) => {
-      let minutes = Math.floor(time / 60);
-      let seconds =  Math.floor(time % 60);
+    const transformTime = (time: number) => {
+      let minutes: number | string = Math.floor(time / 60);
+      let seconds: number | string =  Math.floor(time % 60);
 
       if (minutes < 10) {
         minutes = '0' + minutes;
@@ -112,7 +117,7 @@ class AudioPlayer extends React.PureComponent {
     let acumTime = transformTime(progress);
     let residueTime = transformTime(duration - progress);
 
-    const onVolumeChange = (event) => {
+    const onVolumeChange = (event: React.FormEvent<HTMLInputElement>) : void => {
       const audio = this._audioRef.current;
       if(audio) {
         audio.volume = +(event.currentTarget.value);

@@ -1,5 +1,5 @@
 import * as React from "react";
-import styles from './header';
+import styles from './header.css';
 import {connect} from "react-redux";
 import {getCategories, getCurrenCategory, getScore} from "../../../redux/selectors.tsx";
 
@@ -19,26 +19,26 @@ const Header = (props) => {
   } = props;
 
   return (
-    // <header>
-    //   <div className={styles.topHeader}>
-    //     <img src={logoURL} alt="logo"/>
-    //     <span className={styles.pointCounter}>Score: {score}</span>
-    //   </div>
+    <header>
+      <div className={styles.topHeader}>
+        <img src={logoURL} alt="logo"/>
+        <span className={styles.pointCounter}>Score: {score}</span>
+      </div>
 
-    //   <div className={styles.categoryQuestions}>
-    //     {categories.map((category, id) => (
-    //       <span 
-    //         className={
-    //           currenCategory === id ?
-    //            `${styles.categoryQuestionsItemActive} ${styles.categoryQuestionsItem}` :
-    //             styles.categoryQuestionsItem}
-    //         key={id}>
-    //         {category}
-    //       </span>
-    //     ))}
-    //   </div>
-    // </header>
-    <div>Htaeder</div>
+      <div className={styles.categoryQuestions}>
+        {categories.map((category, id) => (
+          <span 
+            className={
+              currenCategory === id ?
+               `${styles.categoryQuestionsItemActive} ${styles.categoryQuestionsItem}` :
+                styles.categoryQuestionsItem}
+            key={id}>
+            {category}
+          </span>
+        ))}
+      </div>
+    </header>
+    // <div>Htaeder</div>
   )
 }
 

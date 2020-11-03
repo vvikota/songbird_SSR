@@ -1,6 +1,6 @@
 import * as React from "react";
 import styles from "./bird-description.css";
-import AudioPlayer from "../player/player";
+import AudioPlayer from "../player/player.tsx";
 import {connect} from "react-redux";
 import {getActiveAnswerData, getIsStartLevel} from "../../../redux/selectors.tsx";
 
