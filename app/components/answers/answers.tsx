@@ -1,37 +1,33 @@
 import * as React from "react";
 import {createRef} from 'react';
-import styles from "./answers.css";
 import {connect} from "react-redux";
-import {ActionCreator} from "../../../redux/reducer";
-import {
-  getCurrentAnswerVariants,
-  getCorrectAnswer,
-  getIsCorrectAnswer,
-  getIsStartLevel
-} from "../../../redux/selectors.js";
+import {CategoryQuestions, stateInterface} from "../../../types";
+// @ts-ignore
+import {ActionCreator} from "../../../redux/reducer.js";
+// @ts-ignore
+import { getCurrentAnswerVariants, getCorrectAnswer, getIsCorrectAnswer, getIsStartLevel } from "../../../redux/selectors.js";
 
-// import {CategoryQuestions} from "../../types";
-
+const styles = require("./answers.css");
 const correctSound = 'https://vvikota-songbird.netlify.app/static/media/correct.c59c1ab1.mp3';
 const wrongSound = 'https://vvikota-songbird.netlify.app/static/media/wrong.b1392219.mp3';
 
-// interface Props {
-//   answerVariants: string[];
-//   changeAnswerStatus: () => void;
-//   correctAnswer: CategoryQuestions;
-//   incrementScore: (userAnswer: number) => void;
-//   isCorrectAnswer: boolean;
-//   isStartLevel: boolean;
-//   onCorrectAnswerClick: () => void;
-//   onVariantClick: (currentAnswer: string) => void;
-// }
+interface Props {
+  answerVariants: string[];
+  changeAnswerStatus: () => void;
+  correctAnswer: CategoryQuestions;
+  incrementScore: (userAnswer: number) => void;
+  isCorrectAnswer: boolean;
+  isStartLevel: boolean;
+  onCorrectAnswerClick: () => void;
+  onVariantClick: (currentAnswer: string) => void;
+}
 
-// interface State {
-//   userAnswer: string[];
-// }
+interface State {
+  userAnswer: string[];
+}
 
-class Answers extends React.PureComponent{
-  constructor(props) {
+class Answers extends React.PureComponent<Props, State>{
+  constructor(props: Props | Readonly<Props>) {
     super(props);
 
     this._audioRef = React.createRef();
@@ -41,9 +37,9 @@ class Answers extends React.PureComponent{
     };
   }
 
-  _audioRef = createRef()
+  private _audioRef = createRef<HTMLAudioElement>()
 
-  componentDidUpdate(prevProps){
+  componentDidUpdate(prevProps: { isStartLevel: boolean; }){
     if(prevProps.isStartLevel === false && this.props.isStartLevel === true){
       const userAnswer = new Array(this.props.answerVariants.length).fill(`empty`);
       this.setState(() => {
@@ -63,7 +59,7 @@ class Answers extends React.PureComponent{
     } = this.props;
  
     const correctAnswer = this.props.correctAnswer.name;
-    const processUserAnswer = (currentAnswer, id) => {
+    const processUserAnswer = (currentAnswer: string, id: number) => {
       
       if (!isCorrectAnswer){
         const userAnswer = [...this.state.userAnswer];
@@ -88,7 +84,7 @@ class Answers extends React.PureComponent{
       onVariantClick(currentAnswer);
     }
 
-    const classForButton = (id) => (this.state.userAnswer[id] === correctAnswer ? styles.correct : styles.incorrect);
+    const classForButton = (id: number) => (this.state.userAnswer[id] === correctAnswer ? styles.correct : styles.incorrect);
 
     return (
       <section className={styles.answers}>
@@ -109,7 +105,7 @@ class Answers extends React.PureComponent{
   }
 }
 
-const mapStateToProps = (state) => (
+const mapStateToProps = (state: stateInterface) => (
   {
     answerVariants: getCurrentAnswerVariants(state),
     correctAnswer: getCorrectAnswer(state),
@@ -118,8 +114,8 @@ const mapStateToProps = (state) => (
   }
 );
 
-const mapDispatchToProps = (dispatch) => ({
-  onVariantClick: (answer) => {
+const mapDispatchToProps = (dispatch: (arg0: any) => void) => ({
+  onVariantClick: (answer: string) => {
     dispatch(ActionCreator.chooseVariant(answer))
   },
 
@@ -127,7 +123,7 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(ActionCreator.changeAnswerStatus())
   },
 
-  incrementScore: (numberOfPoints) => {
+  incrementScore: (numberOfPoints: number) => {
     dispatch(ActionCreator.incrementScore(numberOfPoints))
   },
 });

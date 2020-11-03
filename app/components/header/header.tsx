@@ -1,17 +1,19 @@
 import * as React from "react";
-import styles from './header.css';
 import {connect} from "react-redux";
-import {getCategories, getCurrenCategory, getScore} from "../../../redux/selectors";
+import {stateInterface} from "../../../types";
+// @ts-ignore
+import {getCategories, getCurrenCategory, getScore} from "../../../redux/selectors.js";
 
+const styles = require('./header.css')
 const logoURL = "https://vvikota-songbird.netlify.app/static/media/logo.da8f049a.png";
 
-// interface HeaderProps {
-//   categories: string[]
-//   currenCategory: number
-//   score: number
-// }
+interface HeaderProps {
+  categories: string[]
+  currenCategory: number
+  score: number
+}
 
-const Header = (props) => {
+const Header = (props: HeaderProps) => {
   const {
     categories,
     currenCategory,
@@ -38,11 +40,10 @@ const Header = (props) => {
         ))}
       </div>
     </header>
-    // <div>Htaeder</div>
   )
 }
 
-const mapStateToProps = (state: any) => ({
+const mapStateToProps = (state: stateInterface) => ({
   categories: getCategories(state),
   currenCategory: getCurrenCategory(state),
   score: getScore(state),

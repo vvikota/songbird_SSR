@@ -1,8 +1,8 @@
 import * as React from 'react';
 import styles from './App.css'
-import Header from './header/header';
+import Header from './header/header.tsx';
 import MainScreen from './main-screen/main-screen';
-import WinScreen from './win-screen/win-screen';
+import WinScreen from './win-screen/win-screen.tsx';
 
 export default class App extends React.PureComponent {
   constructor() {

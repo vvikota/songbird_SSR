@@ -1,25 +1,29 @@
 import * as React from "react";
-import styles from './win-screen.css';
 import {connect} from "react-redux";
-import {ActionCreator} from "../../../redux/reducer";
+import {stateInterface} from "../../../types";
+// @ts-ignore
+import {ActionCreator} from "../../../redux/reducer.js";
+// @ts-ignore
 import {getCategories, getScoreShowStatus, getshowSaveResult, getScore} from "../../../redux/selectors.js";
+// @ts-ignore
 import Score from "../score/score.tsx";
-import SaveResult from "../save-result/save-result";
-// import {stateInterface} from "../../types";
+// @ts-ignore
+import SaveResult from "../save-result/save-result.tsx";
 
+const styles = require('./win-screen.css');
 const winImgURL = "https://vvikota-songbird.netlify.app/static/media/winner.20431031.jpg";
 
-// interface WinScreenProps { 
-//   score: number
-//   onNextGameClick: () => void
-//   resetGame: () => void
-//   categories: string[]
-//   isScoreShow: boolean
-//   changeSaveResultShowStatus: () => void
-//   isShowSaveResult: boolean
-// }
+interface WinScreenProps { 
+  score: number
+  onNextGameClick: () => void
+  resetGame: () => void
+  categories: string[]
+  isScoreShow: boolean
+  changeSaveResultShowStatus: () => void
+  isShowSaveResult: boolean
+}
 
-const WinScreen = (props) =>  {
+const WinScreen = (props: WinScreenProps) =>  {
   const {
     score,
     onNextGameClick,
@@ -64,14 +68,14 @@ const WinScreen = (props) =>  {
   )
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: stateInterface) => ({
     score: getScore(state),
     categories: getCategories(state),
     isScoreShow: getScoreShowStatus(state),
     isShowSaveResult: getshowSaveResult(state),
 })
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch: (arg0: any) => void) => ({
   resetGame: () => {
     dispatch(ActionCreator.resetGame())
   },

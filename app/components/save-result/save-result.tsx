@@ -1,30 +1,36 @@
 import * as React from 'react';
-import styles from './save-result.css';
-
-import {getScore, getGameScore} from "../../../redux/selectors.js";
-// import {stateInterface} from "../../types";
 import {connect} from "react-redux";
-import {ActionCreator} from "../../../redux/reducer";
+import {stateInterface} from "../../../types";
+// @ts-ignore
+import {getScore, getGameScore} from "../../../redux/selectors.js";
+// @ts-ignore
+import {ActionCreator} from "../../../redux/reducer.js";
 
-// interface currentScoreRow {
-//   name: string
-//   score: number
-// }
+const styles = require('./save-result.css');
 
-// interface Props {
-//   saveResult: (name: string, currentScore: number, currentScoreList: currentScoreRow[]) => void
-//   changeScoreShow: () => void
-//   changeSaveResultShow: () => void
-//   currentScore: number
-//   currentScoreList: currentScoreRow[]
-// }
+interface currentScoreRow {
+  name: string
+  score: number
+}
 
-// interface State {
-//   inputValue: string
-// }
+interface Props {
+  saveResult: (
+    name: string,
+    currentScore: number,
+    currentScoreList: currentScoreRow[]
+  ) => void
+  changeScoreShow: () => void
+  changeSaveResultShow: () => void
+  currentScore: number
+  currentScoreList: currentScoreRow[]
+}
 
-class SaveResult extends React.PureComponent{
-  constructor(props) {
+interface State {
+  inputValue: string
+}
+
+class SaveResult extends React.PureComponent<Props, State>{
+  constructor(props: any) {
     super(props);
 
     this.state = {
@@ -34,7 +40,7 @@ class SaveResult extends React.PureComponent{
     this.handleChange = this.handleChange.bind(this)
   }
 
-  handleChange(event) {
+  handleChange(event: { target: { value: any; }; }) {
     this.setState({inputValue: event.target.value})
   }
 
@@ -67,15 +73,15 @@ class SaveResult extends React.PureComponent{
   }
 }
 
-const mapStateToProps = (state) => (
+const mapStateToProps = (state: stateInterface) => (
   {
     currentScore : getScore(state),
     currentScoreList: getGameScore(state),
   }
 );
 
-const mapDispatchToProps = (dispatch) => ({
-  saveResult: (name, currentScore, currentScoreList) => {
+const mapDispatchToProps = (dispatch: (arg0: any) => void) => ({
+  saveResult: (name: string, currentScore: number, currentScoreList: currentScoreRow[]) => {
     dispatch(ActionCreator.saveResultToGameScore(name, currentScore, currentScoreList))
   },
 
