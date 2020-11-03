@@ -1,12 +1,21 @@
 import * as React from 'react';
-import styles from './App.css'
+// @ts-ignore
 import Header from './header/header.tsx';
-import MainScreen from './main-screen/main-screen';
+// @ts-ignore
+import MainScreen from './main-screen/main-screen.tsx';
+// @ts-ignore
 import WinScreen from './win-screen/win-screen.tsx';
 
-export default class App extends React.PureComponent {
-  constructor() {
-    super();
+const styles = require('./App.css');
+
+interface Props {}
+interface State {
+  isGameOver: boolean;
+}
+
+export default class App extends React.PureComponent<Props, State>{
+  constructor(props: any) {
+    super(props);
 
     this.state = {
       isGameOver: false,

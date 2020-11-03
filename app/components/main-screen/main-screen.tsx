@@ -1,35 +1,35 @@
 import * as React from "react";
-import styles from './main-screen.css';
-import CurrentQuestion from "../current-question/current-question";
-import Answers from "../answers/answers.tsx";
-import BirdDescription from "../bird-description/bird-description.tsx";
-import {ActionCreator} from "../../../redux/reducer";
 import {connect} from "react-redux";
-import {
-  getQuestions,
-  getCurrenCategory,
-  getIsCorrectAnswer,
-  getCategories
-} from "../../../redux/selectors.js";
-// import {DataCategory} from "../../types";
+import {DataCategory, stateInterface} from "../../../types";
+// @ts-ignore
+import CurrentQuestion from "../current-question/current-question.tsx";
+// @ts-ignore
+import Answers from "../answers/answers.tsx";
+// @ts-ignore
+import BirdDescription from "../bird-description/bird-description.tsx";
+// @ts-ignore
+import {ActionCreator} from "../../../redux/reducer.js";
+// @ts-ignore
+import { getQuestions, getCurrenCategory, getIsCorrectAnswer, getCategories } from "../../../redux/selectors.js";
 
-// interface Props {
-//   getFirstCorrectAnswer: (questions: DataCategory[], currentCategory: number) => void;
-//   currenCategory: number;
-//   questions: DataCategory[]
-//   isCorrectAnswer: boolean;
-//   categories: number[];
-//   onNextLevelClick: (questions: DataCategory[], currenCategory: number) => void;
-//   onGameOverClick: () => void;
-// }
+const styles = require('./main-screen.css')
+interface Props {
+  getFirstCorrectAnswer: (questions: DataCategory[], currentCategory: number) => void;
+  currenCategory: number;
+  questions: DataCategory[]
+  isCorrectAnswer: boolean;
+  categories: number[];
+  onNextLevelClick: (questions: DataCategory[], currenCategory: number) => void;
+  onGameOverClick: () => void;
+}
 
-// interface State {
-//   isPlaying: boolean;
-//   isPlayingVariantAnswer: boolean;
-// }
+interface State {
+  isPlaying: boolean;
+  isPlayingVariantAnswer: boolean;
+}
 
-class MainScreen extends React.PureComponent{
-  constructor(props) {
+class MainScreen extends React.PureComponent<Props, State>{
+  constructor(props: Props | Readonly<Props>) {
     super(props);
 
     this.state = {
@@ -94,7 +94,7 @@ class MainScreen extends React.PureComponent{
   }
 }
 
-const mapStateToProps = (state) => (
+const mapStateToProps = (state: stateInterface) => (
   {
     currenCategory: getCurrenCategory(state),
     questions: getQuestions(state),
@@ -103,13 +103,13 @@ const mapStateToProps = (state) => (
   }
 );
 
-const mapDispatchToProps = (dispatch) => ({
-  onNextLevelClick: (dataCurrentQuestion, currenCategory) => {
+const mapDispatchToProps = (dispatch: (arg0: any) => void) => ({
+  onNextLevelClick: (dataCurrentQuestion: DataCategory[], currenCategory: number) => {
     dispatch(ActionCreator.changeCurrentCategory())
     dispatch(ActionCreator.loadCorrectAnswer(dataCurrentQuestion, currenCategory + 1))
   },
 
-  getFirstCorrectAnswer: (questions, currenCategory) => {
+  getFirstCorrectAnswer: (questions: DataCategory[], currenCategory: number) => {
     dispatch(ActionCreator.loadCorrectAnswer(questions, currenCategory))
   },  
 });

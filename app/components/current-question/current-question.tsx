@@ -1,24 +1,22 @@
 import * as React from "react";
-import styles from "./current-question.css";
-import AudioPlayer from "../player/player.tsx";
 import {connect} from "react-redux";
-import {
-  getCorrectAnswer,
-  getIsCorrectAnswer,
-  getIsStartLevel
-} from "../../../redux/selectors.js";
-// import {CategoryQuestions} from "../../types";
+import {CategoryQuestions, stateInterface} from "../../../types";
+// @ts-ignore
+import AudioPlayer from "../player/player.tsx";
+// @ts-ignore
+import { getCorrectAnswer, getIsCorrectAnswer, getIsStartLevel } from "../../../redux/selectors.js";
 
+const styles = require("./current-question.css");
 const defaultImg = 'https://vvikota-songbird.netlify.app/static/media/default.7ccb15c9.jpg';
 
-// interface CurrentQuestionProps {
-//   isPlaying: boolean;
-//   isCorrectAnswer: boolean;
-//   onPlayButtonClick: () => void;
-//   correctAnswer: CategoryQuestions
-// }
+interface CurrentQuestionProps {
+  isPlaying: boolean;
+  isCorrectAnswer: boolean;
+  onPlayButtonClick: () => void;
+  correctAnswer: CategoryQuestions
+}
 
-const CurrentQuestion = (props) => {
+const CurrentQuestion = (props: CurrentQuestionProps) => {
   const {
     correctAnswer,
     isCorrectAnswer,
@@ -58,7 +56,7 @@ const CurrentQuestion = (props) => {
   )
 }
 
-const mapStateToProps = (state) => (
+const mapStateToProps = (state: stateInterface) => (
   {
     correctAnswer: getCorrectAnswer(state),
     isCorrectAnswer: getIsCorrectAnswer(state),
