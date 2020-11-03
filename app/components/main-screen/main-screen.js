@@ -2,7 +2,7 @@ import * as React from "react";
 import styles from './main-screen.css';
 import CurrentQuestion from "../current-question/current-question";
 import Answers from "../answers/answers";
-import BirdDescription from "../bird-description/bird-description";
+import BirdDescription from "../bird-description/bird-description.tsx";
 import {ActionCreator} from "../../../redux/reducer";
 import {connect} from "react-redux";
 import {

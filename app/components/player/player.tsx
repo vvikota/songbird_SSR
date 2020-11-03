@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {createRef} from 'react';
-import {PlayIcon, PauseIcon} from '../icons';
+// @ts-ignore
+import {PlayIcon, PauseIcon} from '../icons.js';
 
 const styles = require('./player.css');
 
